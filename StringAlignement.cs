@@ -30,13 +30,13 @@ class StringAlignment
             {
                 if (s1Length > s2Length + shift)
                 {
-                    string shiftedStr1 = str1 + new string('*', s2Length - (s1Length + shift));
-                    string shiftedStr2 = new string('*', shift) + str2;
+                    string shiftedStr1 = str1;
+                    string shiftedStr2 = new string('*', shift) + str2 + new string('*', s1Length - (s2Length + shift));
                     distance = ComputeDistance(shiftedStr1, shiftedStr2);
                 }
                 else
                 {
-                    string shiftedStr1 = str1 + new string('*', shift);
+                    string shiftedStr1 = str1 + new string('*', shift + s2Length - s1Length);
                     string shiftedStr2 = new string('*', shift) + str2;
                     distance = ComputeDistance(shiftedStr1, shiftedStr2);
                 }
