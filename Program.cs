@@ -22,5 +22,10 @@
 // int minDistance2 = alignment.ComputeMinDistance(str3, str4);
 // Console.WriteLine($"Minimum distance between '{str3}' and '{str4}' is: {minDistance2}");
 
-// GameOfLife implementation
-new GameOfLifeTests().RunAll();
+// // GameOfLife implementation
+// new GameOfLifeTests().RunAll();
+
+// TextJustification implementation
+TextJustificationTests tests = new TextJustificationTests();
+tests.RunAll();
+
