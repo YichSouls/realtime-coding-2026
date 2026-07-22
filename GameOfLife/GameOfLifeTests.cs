@@ -48,9 +48,9 @@ class GameOfLifeTests
         // Deep copy input since the method mutates in place
         int[][] board = input.Select(row => row.ToArray()).ToArray();
 
-        _game.CalculateNextGeneration(board);
+        int[][] result = _game.CalculateNextGeneration(board);
 
-        bool pass = BoardsEqual(board, expected);
+        bool pass = BoardsEqual(result, expected);
         Console.WriteLine($"[{(pass ? "PASS" : "FAIL")}] {name}");
 
         if (!pass)
@@ -58,7 +58,7 @@ class GameOfLifeTests
             Console.WriteLine("  Expected:");
             PrintBoard(expected);
             Console.WriteLine("  Got:");
-            PrintBoard(board);
+            PrintBoard(result);
         }
     }
 

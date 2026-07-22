@@ -2,7 +2,6 @@ class GameOfLife
 {
     public int rows;
     public int cols;
-    public int[][] currentGeneration;
 
     public int[][] CalculateNextGeneration(int[][] currentGeneration)
     {
@@ -14,7 +13,6 @@ class GameOfLife
 
         rows = currentGeneration.Length;
         cols = currentGeneration[0].Length;
-        currentGeneration = currentGeneration;
 
         int[][] nextGeneration = new int[rows][];
         for (int i = 0; i < rows; i++)
@@ -26,12 +24,42 @@ class GameOfLife
         {
             for (int c = 0; c < cols; c++)
             {
-                int liveNeighbors = CountNeighbors(r, c);
+                int liveNeighbors = CountNeighbors(r, c, currentGeneration);
+                nextGeneration[r][c] = currentGeneration[r][c];
+
+                if (currentGeneration[r][c] == 1)
+                {
+                    // Underpopulation
+                    if (liveNeighbors < 2)
+                    {
+                        nextGeneration[r][c] = 0;
+                    }
+                    // Survival
+                    if (liveNeighbors == 2 || liveNeighbors == 3)
+                    {
+                        nextGeneration[r][c] = 1;
+                    }
+                    // Overpopulation
+                    if (liveNeighbors > 3)
+                    {
+                        nextGeneration[r][c] = 0;
+                    }
+                }
+                else
+                {
+                    // Reproduction
+                    if (liveNeighbors == 3)
+                    {
+                        nextGeneration[r][c] = 1;
+                    }
+                }
             }
         }
+
+        return nextGeneration;
     }
 
-    public int CountNeighbors(int row, int col)
+    public int CountNeighbors(int row, int col, int[][] currentGeneration)
     {
         int[] dx = [-1, -1, -1, 0, 1, 1, 1, 0];
         int[] dy = [-1, 0, 1, 1, 1, 0, -1, -1];
@@ -44,7 +72,7 @@ class GameOfLife
 
             if (neighborR >= 0 && neighborR < rows && neighborC >= 0 && neighborC < cols)
             {
-                liveNeighbor += currentGeneration[row][col];
+                liveNeighbor += currentGeneration[neighborR][neighborC];
             }
         }
 
