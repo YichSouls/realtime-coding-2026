@@ -25,7 +25,10 @@
 // // GameOfLife implementation
 // new GameOfLifeTests().RunAll();
 
-// TextJustification implementation
-TextJustificationTests tests = new TextJustificationTests();
-tests.RunAll();
+// // TextJustification implementation
+// TextJustificationTests tests = new TextJustificationTests();
+// tests.RunAll();
 
+// CompareVersionNumbers implementation
+CompareVersionNumbersTests tests = new CompareVersionNumbersTests();
+tests.RunAll();
