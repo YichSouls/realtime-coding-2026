@@ -29,6 +29,10 @@
 // TextJustificationTests tests = new TextJustificationTests();
 // tests.RunAll();
 
-// CompareVersionNumbers implementation
-CompareVersionNumbersTests tests = new CompareVersionNumbersTests();
+// // CompareVersionNumbers implementation
+// CompareVersionNumbersTests tests = new CompareVersionNumbersTests();
+// tests.RunAll();
+
+// MeetingRoomII implementation
+MeetingRoomIITests tests = new MeetingRoomIITests();
 tests.RunAll();
