@@ -33,6 +33,10 @@
 // CompareVersionNumbersTests tests = new CompareVersionNumbersTests();
 // tests.RunAll();
 
-// MeetingRoomII implementation
-MeetingRoomIITests tests = new MeetingRoomIITests();
+// // MeetingRoomII implementation
+// MeetingRoomIITests tests = new MeetingRoomIITests();
+// tests.RunAll();
+
+// MyCalendarI implementation
+MyCalendarITests tests = new MyCalendarITests();
 tests.RunAll();
