@@ -37,6 +37,10 @@
 // MeetingRoomIITests tests = new MeetingRoomIITests();
 // tests.RunAll();
 
-// MyCalendarI implementation
-MyCalendarITests tests = new MyCalendarITests();
+// // MyCalendarI implementation
+// MyCalendarITests tests = new MyCalendarITests();
+// tests.RunAll();
+
+// OldPhoneTyping implementation
+OldPhoneTypingTests tests = new OldPhoneTypingTests();
 tests.RunAll();

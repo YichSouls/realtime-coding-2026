@@ -1,4 +1,4 @@
-Text Justification
+# Text Justification
 
 Problem Description
 
@@ -12,8 +12,8 @@ After determining the words in a line, distribute the spaces according to the fo
 * Spaces should be distributed as evenly as possible between words.
 * If the spaces cannot be evenly distributed, the extra spaces should be assigned to the leftmost gaps.
 * The last line must be left-justified, meaning:
-    * Words are separated by a single space.
-    * Remaining spaces are appended to the end of the line.
+  * Words are separated by a single space.
+  * Remaining spaces are appended to the end of the line.
 
 Return the formatted text as a list of strings.
 
