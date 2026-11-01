@@ -44,3 +44,5 @@
 // // OldPhoneTyping implementation
 // OldPhoneTypingTests tests = new OldPhoneTypingTests();
 // tests.RunAll();
+
+Console.WriteLine("Hello");

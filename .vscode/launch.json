@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C#: realtime-coding-2026",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/realtime-coding-2026/bin/Debug/net10.0/realtime-coding-2026.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/realtime-coding-2026",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
