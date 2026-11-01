@@ -41,6 +41,6 @@
 // MyCalendarITests tests = new MyCalendarITests();
 // tests.RunAll();
 
-// OldPhoneTyping implementation
-OldPhoneTypingTests tests = new OldPhoneTypingTests();
-tests.RunAll();
+// // OldPhoneTyping implementation
+// OldPhoneTypingTests tests = new OldPhoneTypingTests();
+// tests.RunAll();
