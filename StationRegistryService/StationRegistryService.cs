@@ -1,13 +1,18 @@
 namespace StationRegistry
 {
-    public class Station
-    {
-        public required string Code { get; set; }
-        public required string Name { get; set; }
-        public required string City { get; set; }
-    }
+    public record Station(
+        string Code,
+        string Name,
+        string City
+    );
 
     public record StationSummary(string Code, string Name);
+
+    public record CityGroup(
+        string City,
+        int StationCount,
+        List<string> StationNames
+    );
 
     public interface IStationRegistry
     {
@@ -26,11 +31,17 @@ namespace StationRegistry
 
     public class StationRegistry : IStationRegistry
     {
-        public List<Station> Stations = [
-            new Station{Code= "PAR01", Name="Gare du Nord", City="Paris"},
-        new Station{Code= "PAR02", Name="Gare de Lyon", City="Paris"},
-        new Station{Code= "LYO01", Name="Part-Dieu", City="Lyon"},
-    ];
+        public List<Station> Stations = new List<Station>
+        {
+            new("PAR01", "Paris Nord", "Paris"),
+            new("PAR02", "Paris Lyon", "Paris"),
+            new("PAR03", "Paris Montparnasse", "Paris"),
+            new("LYO01", "Lyon Part-Dieu", "Lyon"),
+            new("LYO02", "Lyon Perrache", "Lyon"),
+            new("LIL01", "Lille Flandres", "Lille"),
+            new("LIL02", "Lille Europe", "Lille"),
+            new("PAR04", "Paris Bercy", "PARIS")
+        };
 
         public bool AddStation(Station station)
         {
@@ -84,6 +95,21 @@ namespace StationRegistry
                 .Distinct()
                 .OrderBy(c => c)
                 .ToArray();
+        }
+
+        public List<CityGroup> SearchGroupedByCity(string input)
+        {
+            return Stations
+                .Where(s => s.City.StartsWith(input))
+                .GroupBy(s => s.City)
+                .Select(g => new CityGroup
+                (
+                    g.Key,
+                    g.Count(),
+                    g.Select(s => s.Name).OrderBy(n => n).ToList()
+                ))
+                .OrderBy(c => c.City)
+                .ToList();
         }
     }
 }
